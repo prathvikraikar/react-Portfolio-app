@@ -108,7 +108,14 @@ const Projects = () => {
                       {project.techStack.map((tech) => (
                         <span
                           key={tech}
-                          className="px-3 py-1 bg-gray-100 border border-gray-200 label-small hover:border-accent transition-colors rounded-full"
+                          className="px-3 py-1 
+             bg-gray-100 dark:bg-gray-800 
+             text-gray-800 dark:text-gray-100 
+             border border-gray-200 dark:border-gray-700 
+             label-small 
+             hover:border-accent 
+             transition-colors 
+             rounded-full"
                         >
                           {tech}
                         </span>

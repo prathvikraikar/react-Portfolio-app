@@ -219,7 +219,7 @@
 
 /* Navigation */
 .nav-link {
-  color: var(--text-primary);
+  color: black;
   text-decoration: none;
   font-family: ui-monospace, monospace;
   font-size: 12px;

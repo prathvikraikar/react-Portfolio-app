@@ -113,10 +113,10 @@ const Hero = () => {
               </a>
             </div>
           </div>
-
+s
           {/* Visual Element */}
           <div className="relative">
-            <div className="aspect-square bg-white border border-gray-200 p-8 hover:transform hover:scale-105 transition-transform duration-300">
+            <div className="aspect-square bg-blue border border-gray-150 p-8 mt-20 ml-20 hover:transform hover:scale-105 transition-transform duration-300">
               <div className="h-full flex flex-col justify-between">
                 <div>
                   <div className="label mb-4">TECH STACK</div>
