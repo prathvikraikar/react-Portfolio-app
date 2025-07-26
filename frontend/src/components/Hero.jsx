@@ -99,17 +99,17 @@ const Hero = () => {
 
             {/* Social Links */}
             <div className="flex items-center gap-6">
-              <a href="#" className="nav-link flex items-center gap-2">
+              <a href={mockData.personal.github} target="_blank" rel="noopener noreferrer" className="nav-link flex items-center gap-2">
                 <Github size={16} />
                 GITHUB
               </a>
-              <a href="#" className="nav-link flex items-center gap-2">
+              <a href={mockData.personal.linkedin} target="_blank" rel="noopener noreferrer" className="nav-link flex items-center gap-2">
                 <Linkedin size={16} />
                 LINKEDIN
               </a>
-              <a href="#" className="nav-link flex items-center gap-2">
+              <a href={mockData.personal.resume} target="_blank" rel="noopener noreferrer" className="nav-link flex items-center gap-2">
                 <ExternalLink size={16} />
-                PORTFOLIO
+                RESUME
               </a>
             </div>
           </div>
