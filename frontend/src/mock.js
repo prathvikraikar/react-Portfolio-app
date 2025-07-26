@@ -6,7 +6,9 @@ export const mockData = {
     email: "prathvikraikar@gmail.com",
     phone: "+91 8073260791",
     location: "HONNAVAR",
-    linkedin: "linkedin.com/in/prathvikraikar",
+    linkedin: "https://linkedin.com/in/prathvikraikar",
+    github: "https://github.com/prathvikraikar",
+    resume: "https://drive.google.com/file/d/1TePu8sGwRblmxqIwp77nGnLFSPwmhOLK/view",
     tagline: "Dedicated Flutter & Node.js developer building high-quality cross-platform applications",
     bio: "2.4+ years of hands-on experience in building high-quality cross-platform applications. Proficient in Dart and well-versed in all aspects of UI development, including responsive design, animations, and complex layouts."
   },
@@ -173,10 +175,7 @@ export const mockFunctions = {
 
   downloadResume: () => {
     console.log("Resume download initiated");
-    // Simulate resume download
-    const link = document.createElement('a');
-    link.download = 'Prathvik_Raikar_Resume.pdf';
-    link.click();
+    window.open(mockData.personal.resume, '_blank');
   },
 
   subscribeNewsletter: async (email) => {

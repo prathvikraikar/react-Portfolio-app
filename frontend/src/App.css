@@ -1,28 +1,46 @@
-/* Custom CSS following newtwen design system */
+/* Custom CSS with modern color palette and dark mode support */
 
 :root {
-  /* Monochromatic Base */
-  --color-background: #F2F2F2;
+  /* Light Mode Colors */
+  --color-background: #FAFAFA;
   --bg-white: #FFFFFF;
-  --text-primary: #232323;
-  --text-secondary: rgba(35, 35, 35, 0.7);
-  --border-color: #232323;
-  --border-light: rgba(35, 35, 35, 0.1);
+  --text-primary: #1F2937;
+  --text-secondary: rgba(31, 41, 55, 0.7);
+  --border-color: #E5E7EB;
+  --border-light: rgba(31, 41, 55, 0.1);
   
-  /* Neon Green Accent System */
-  --accent-primary: #38FF62;
-  --accent-hover: #2AE052;
-  --accent-active: #1DC943;
-  --accent-foreground: #232323;
+  /* Modern Blue/Purple Accent System */
+  --accent-primary: #6366F1;
+  --accent-hover: #5B21B6;
+  --accent-active: #4C1D95;
+  --accent-foreground: #FFFFFF;
+  --accent-light: rgba(99, 102, 241, 0.1);
   
-  /* Minimal Functional Colors */
-  --color-success: #38FF62;
-  --color-error: #FF3838;
-  --color-warning: #FFB838;
-  --color-disabled: rgba(35, 35, 35, 0.3);
+  /* Functional Colors */
+  --color-success: #10B981;
+  --color-error: #EF4444;
+  --color-warning: #F59E0B;
+  --color-disabled: rgba(31, 41, 55, 0.3);
   
   /* Grid unit system */
   --grid-unit: 47.6px;
+}
+
+[data-theme="dark"] {
+  /* Dark Mode Colors */
+  --color-background: #0F172A;
+  --bg-white: #1E293B;
+  --text-primary: #F1F5F9;
+  --text-secondary: rgba(241, 245, 249, 0.7);
+  --border-color: #334155;
+  --border-light: rgba(241, 245, 249, 0.1);
+  
+  /* Dark Mode Accent System */
+  --accent-primary: #8B5CF6;
+  --accent-hover: #A855F7;
+  --accent-active: #C084FC;
+  --accent-foreground: #FFFFFF;
+  --accent-light: rgba(139, 92, 246, 0.1);
 }
 
 /* Typography System */
@@ -100,11 +118,30 @@
   letter-spacing: 0.1em;
 }
 
+/* Dark Mode Toggle */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  padding: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+}
+
+.theme-toggle:hover {
+  background: var(--accent-light);
+  border-color: var(--accent-primary);
+}
+
 /* Button Styles */
 .btn-primary {
   background: transparent;
   border: 1px solid var(--border-color);
-  border-radius: 0;
+  border-radius: 4px;
   padding: 12px 24px;
   font-family: ui-monospace, monospace;
   font-size: 12px;
@@ -122,13 +159,15 @@
 }
 
 .btn-primary:hover {
-  background: rgba(35, 35, 35, 0.05);
+  background: var(--accent-light);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
 }
 
 .btn-accent {
   background: var(--accent-primary);
   border: none;
-  border-radius: 0;
+  border-radius: 4px;
   padding: 12px 24px;
   font-family: ui-monospace, monospace;
   font-size: 12px;
@@ -147,13 +186,14 @@
 
 .btn-accent:hover {
   background: var(--accent-hover);
-  transform: scale(1.02);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
 .btn-ghost {
   background: transparent;
   border: none;
-  border-radius: 0;
+  border-radius: 4px;
   padding: 8px 16px;
   font-family: ui-monospace, monospace;
   font-size: 12px;
@@ -171,7 +211,8 @@
 }
 
 .btn-ghost:hover {
-  opacity: 0.7;
+  color: var(--accent-primary);
+  background: var(--accent-light);
 }
 
 /* Navigation */
@@ -183,20 +224,22 @@
   font-weight: 600;
   text-transform: uppercase;
   padding: 8px 12px;
-  transition: opacity 0.15s ease;
+  transition: all 0.15s ease;
   letter-spacing: 0.05em;
   display: inline-block;
+  border-radius: 4px;
 }
 
 .nav-link:hover {
-  opacity: 0.7;
+  color: var(--accent-primary);
+  background: var(--accent-light);
 }
 
 /* Cards */
 .card {
   background: var(--bg-white);
   border: 1px solid var(--border-light);
-  border-radius: 0;
+  border-radius: 8px;
   padding: 24px;
   transition: all 0.2s ease;
   position: relative;
@@ -205,7 +248,8 @@
 
 .card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(35, 35, 35, 0.1);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.1);
+  border-color: var(--accent-primary);
 }
 
 /* Container System */
@@ -238,6 +282,12 @@
   
   .header-logo {
     font-size: 18px;
+  }
+  
+  .theme-toggle {
+    top: 15px;
+    right: 15px;
+    padding: 6px;
   }
 }
 
@@ -293,9 +343,71 @@ html {
 .App {
   background-color: var(--color-background);
   min-height: 100vh;
+  transition: all 0.3s ease;
 }
 
 .main-content {
   position: relative;
   z-index: 1;
+}
+
+/* Grid Background for both themes */
+.grid-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-background);
+  background-image: 
+    linear-gradient(to right, var(--border-light) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border-light) 1px, transparent 1px);
+  background-size: 47.6px 47.6px;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+/* Skills section specific fixes */
+.skills-grid {
+  gap: 1.5rem !important;
+}
+
+.skills-category {
+  margin-bottom: 2rem;
+}
+
+.skills-category:last-child {
+  margin-bottom: 0;
+}
+
+/* Project card improvements */
+.project-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-content {
+  flex-grow: 1;
+}
+
+/* Status badges */
+.status-production {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10B981;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.status-completed {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3B82F6;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.status-academic {
+  background: rgba(139, 92, 246, 0.1);
+  color: #8B5CF6;
+  border: 1px solid rgba(139, 92, 246, 0.2);
 }

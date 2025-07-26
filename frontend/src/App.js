@@ -8,12 +8,14 @@ import Experience from "./components/Experience";
 import Contact from "./components/Contact";
 import GridBackground from "./components/GridBackground";
 import Navigation from "./components/Navigation";
+import ThemeToggle from "./components/ThemeToggle";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <GridBackground />
+        <ThemeToggle />
         <Navigation />
         <Routes>
           <Route path="/" element={
