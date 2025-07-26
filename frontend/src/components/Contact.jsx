@@ -241,10 +241,10 @@ const Contact = () => {
               Flutter & Mobile App Developer • Building the future, one app at a time
             </p>
             <div className="flex justify-center gap-6">
-              <a href="#" className="nav-link">GITHUB</a>
-              <a href="#" className="nav-link">LINKEDIN</a>
-              <a href="#" className="nav-link">RESUME</a>
-              <a href="#" className="nav-link">EMAIL</a>
+              <a href={mockData.personal.github} target="_blank" rel="noopener noreferrer" className="nav-link">GITHUB</a>
+              <a href={mockData.personal.linkedin} target="_blank" rel="noopener noreferrer" className="nav-link">LINKEDIN</a>
+              <a href={mockData.personal.resume} target="_blank" rel="noopener noreferrer" className="nav-link">RESUME</a>
+              <a href={`mailto:${mockData.personal.email}`} className="nav-link">EMAIL</a>
             </div>
             <div className="mt-8 pt-6 border-t border-gray-200">
               <p className="label-small">© 2024 PRATHVIK RAIKAR. ALL RIGHTS RESERVED.</p>
