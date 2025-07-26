@@ -219,7 +219,7 @@
 
 /* Navigation */
 .nav-link {
-  color: black;
+  color: var(--text-primary);
   text-decoration: none;
   font-family: ui-monospace, monospace;
   font-size: 12px;
@@ -235,6 +235,19 @@
 .nav-link:hover {
   color: var(--accent-primary);
   background: var(--accent-light);
+}
+
+/* Navigation specific dark mode fixes */
+.navbar {
+  background: var(--bg-white);
+  border-color: var(--border-color);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+[data-theme="dark"] .navbar {
+  background: rgba(30, 41, 59, 0.9);
+  border-color: var(--border-color);
 }
 
 /* Cards */
