@@ -22,10 +22,10 @@ const Projects = () => {
 
   const getStatusColor = (status) => {
     switch (status) {
-      case 'Production': return 'text-green-600 bg-green-100';
-      case 'Completed': return 'text-blue-600 bg-blue-100';
-      case 'Academic Project': return 'text-purple-600 bg-purple-100';
-      default: return 'text-gray-600 bg-gray-100';
+      case 'Production': return 'status-production';
+      case 'Completed': return 'status-completed';
+      case 'Academic Project': return 'status-academic';
+      default: return 'text-gray-600 bg-gray-100 border-gray-200';
     }
   };
 
