@@ -121,20 +121,22 @@
 /* Dark Mode Toggle */
 .theme-toggle {
   position: fixed;
-  top: 20px;
+  top: 80px;
   right: 20px;
   z-index: 1000;
   background: var(--bg-white);
   border: 1px solid var(--border-color);
-  padding: 8px;
+  padding: 10px;
   cursor: pointer;
   transition: all 0.2s ease;
   border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .theme-toggle:hover {
   background: var(--accent-light);
   border-color: var(--accent-primary);
+  transform: scale(1.05);
 }
 
 /* Button Styles */
