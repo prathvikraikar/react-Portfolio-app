@@ -53,21 +53,21 @@ const Skills = () => {
         </div>
 
         {/* Skills by Category */}
-        <div className="space-y-12">
+        <div className="skills-grid space-y-8">
           {categories.map((category) => {
             const categorySkills = mockData.skills.filter(skill => skill.category === category);
             const IconComponent = categoryIcons[category] || Code;
             
             return (
-              <div key={category} className="card">
-                <div className="flex items-center gap-3 mb-8">
-                  <div className="w-8 h-8 bg-accent flex items-center justify-center">
+              <div key={category} className="card skills-category">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-8 h-8 bg-accent flex items-center justify-center rounded">
                     <IconComponent size={16} className="text-white" />
                   </div>
                   <h3 className="text-regular font-bold">{category}</h3>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {categorySkills.map((skill, index) => {
                     const skillIndex = mockData.skills.indexOf(skill);
                     const isVisible = visibleBars.includes(skillIndex);
@@ -79,9 +79,9 @@ const Skills = () => {
                           <span className="label-small text-accent">{skill.level}%</span>
                         </div>
                         
-                        <div className="h-2 bg-gray-200 overflow-hidden">
+                        <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
                           <div
-                            className="h-full bg-accent transition-all duration-1000 ease-out"
+                            className="h-full bg-accent transition-all duration-1000 ease-out rounded-full"
                             style={{
                               width: isVisible ? `${skill.level}%` : '0%',
                               transitionDelay: `${skillIndex * 100}ms`
