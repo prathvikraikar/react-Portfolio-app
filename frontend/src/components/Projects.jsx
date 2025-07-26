@@ -167,10 +167,15 @@ const Projects = () => {
             </div>
 
             <div className="mt-8 text-center">
-              <button className="btn-accent flex items-center gap-2 mx-auto">
+              <a 
+                href={mockData.personal.github} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="btn-accent flex items-center gap-2 mx-auto"
+              >
                 <Github size={16} />
                 VIEW GITHUB PROFILE
-              </button>
+              </a>
             </div>
           </div>
         </div>
