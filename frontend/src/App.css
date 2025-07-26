@@ -1,34 +1,301 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Custom CSS following newtwen design system */
+
+:root {
+  /* Monochromatic Base */
+  --color-background: #F2F2F2;
+  --bg-white: #FFFFFF;
+  --text-primary: #232323;
+  --text-secondary: rgba(35, 35, 35, 0.7);
+  --border-color: #232323;
+  --border-light: rgba(35, 35, 35, 0.1);
+  
+  /* Neon Green Accent System */
+  --accent-primary: #38FF62;
+  --accent-hover: #2AE052;
+  --accent-active: #1DC943;
+  --accent-foreground: #232323;
+  
+  /* Minimal Functional Colors */
+  --color-success: #38FF62;
+  --color-error: #FF3838;
+  --color-warning: #FFB838;
+  --color-disabled: rgba(35, 35, 35, 0.3);
+  
+  /* Grid unit system */
+  --grid-unit: 47.6px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+/* Typography System */
+.hero-title { 
+  font-family: ui-sans-serif, system-ui, sans-serif; 
+  font-size: clamp(60px, 15vw, 200px); 
+  font-weight: 900; 
+  color: var(--text-primary); 
+  line-height: 0.9; 
+  text-transform: uppercase; 
+  letter-spacing: -0.02em;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.header-logo {
+  font-family: ui-monospace, monospace;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.App-link {
-    color: #61dafb;
+.title-big { 
+  font-family: ui-sans-serif, system-ui, sans-serif; 
+  font-size: clamp(44px, 8vw, 120px); 
+  font-weight: 800; 
+  color: var(--text-primary); 
+  line-height: 0.95; 
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.text-big { 
+  font-family: ui-sans-serif, system-ui, sans-serif; 
+  font-size: clamp(24px, 4vw, 48px); 
+  font-weight: 500; 
+  color: var(--text-primary); 
+  line-height: 1.1;
+}
+
+.text-regular { 
+  font-family: ui-sans-serif, system-ui, sans-serif; 
+  font-size: clamp(16px, 2.5vw, 24px); 
+  font-weight: 500; 
+  color: var(--text-primary); 
+  line-height: 1.3;
+}
+
+.text-body { 
+  font-family: ui-sans-serif, system-ui, sans-serif; 
+  font-size: clamp(14px, 1.8vw, 16px); 
+  font-weight: 400; 
+  color: var(--text-primary); 
+  line-height: 1.6;
+}
+
+.label { 
+  font-family: ui-monospace, monospace; 
+  font-size: clamp(10px, 1.5vw, 14px); 
+  font-weight: 600; 
+  color: var(--text-primary); 
+  line-height: 1; 
+  text-transform: uppercase; 
+  letter-spacing: 0.1em;
+}
+
+.label-small { 
+  font-family: ui-monospace, monospace; 
+  font-size: clamp(8px, 1.2vw, 12px); 
+  font-weight: 600; 
+  color: var(--text-primary); 
+  line-height: 1.25; 
+  text-transform: uppercase; 
+  letter-spacing: 0.1em;
+}
+
+/* Button Styles */
+.btn-primary {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 0;
+  padding: 12px 24px;
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.btn-primary:hover {
+  background: rgba(35, 35, 35, 0.05);
+}
+
+.btn-accent {
+  background: var(--accent-primary);
+  border: none;
+  border-radius: 0;
+  padding: 12px 24px;
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-foreground);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.btn-accent:hover {
+  background: var(--accent-hover);
+  transform: scale(1.02);
+}
+
+.btn-ghost {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 8px 16px;
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.btn-ghost:hover {
+  opacity: 0.7;
+}
+
+/* Navigation */
+.nav-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  transition: opacity 0.15s ease;
+  letter-spacing: 0.05em;
+  display: inline-block;
+}
+
+.nav-link:hover {
+  opacity: 0.7;
+}
+
+/* Cards */
+.card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 0;
+  padding: 24px;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(35, 35, 35, 0.1);
+}
+
+/* Container System */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+  .container {
+    padding: 0 16px;
+  }
+  
+  .btn-primary,
+  .btn-accent {
+    width: 100%;
+    min-height: 52px;
+  }
+  
+  .hero-title {
+    font-size: 60px;
+  }
+  
+  .title-big {
+    font-size: 44px;
+  }
+  
+  .header-logo {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding: 0 48px;
+  }
+}
+
+/* Utility Classes */
+.text-accent {
+  color: var(--accent-primary);
+}
+
+.bg-accent {
+  background-color: var(--accent-primary);
+}
+
+.border-accent {
+  border-color: var(--accent-primary);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Line clamp utility */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* App specific styles */
+.App {
+  background-color: var(--color-background);
+  min-height: 100vh;
+}
+
+.main-content {
+  position: relative;
+  z-index: 1;
 }
