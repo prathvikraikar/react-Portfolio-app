@@ -71,81 +71,68 @@ const Projects = () => {
             return (
               <div
                 key={project.id}
-                className="card group cursor-pointer hover:shadow-lg transition-all duration-300"
+                className="card project-card group cursor-pointer hover:shadow-lg transition-all duration-300"
                 onMouseEnter={() => setHoveredProject(project.id)}
                 onMouseLeave={() => setHoveredProject(null)}
               >
                 {/* Project Header */}
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-accent flex items-center justify-center">
+                    <div className="w-8 h-8 bg-accent flex items-center justify-center rounded">
                       <IconComponent size={16} className="text-white" />
                     </div>
                     <div className="label-small">{project.category}</div>
                   </div>
                   
-                  <div className={`px-2 py-1 rounded text-xs ${getStatusColor(project.status)}`}>
+                  <div className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(project.status)}`}>
                     {project.status}
                   </div>
                 </div>
 
-                {/* Project Title & Description */}
-                <div className="mb-6">
-                  <h3 className="text-regular font-bold mb-3 group-hover:text-accent transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-body line-clamp-3">
-                    {project.description}
-                  </p>
-                </div>
-
-                {/* Tech Stack */}
-                <div className="mb-6">
-                  <div className="label-small mb-3">TECH STACK</div>
-                  <div className="flex flex-wrap gap-2">
-                    {project.techStack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-1 bg-gray-100 border border-gray-200 label-small hover:border-accent transition-colors"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                {/* Project Content */}
+                <div className="project-content">
+                  {/* Project Title & Description */}
+                  <div className="mb-6">
+                    <h3 className="text-regular font-bold mb-3 group-hover:text-accent transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-body line-clamp-3">
+                      {project.description}
+                    </p>
                   </div>
-                </div>
 
-                {/* Highlights */}
-                <div className="mb-6">
-                  <div className="label-small mb-3">KEY HIGHLIGHTS</div>
-                  <div className="space-y-1">
-                    {project.highlights.slice(0, 2).map((highlight, index) => (
-                      <div key={index} className="flex items-start gap-2">
-                        <div className="w-1 h-1 bg-accent mt-2 flex-shrink-0"></div>
-                        <span className="text-body text-sm">{highlight}</span>
-                      </div>
-                    ))}
+                  {/* Tech Stack */}
+                  <div className="mb-6">
+                    <div className="label-small mb-3">TECH STACK</div>
+                    <div className="flex flex-wrap gap-2">
+                      {project.techStack.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1 bg-gray-100 border border-gray-200 label-small hover:border-accent transition-colors rounded-full"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
 
-                {/* Action Buttons */}
-                <div className="flex gap-3">
-                  <button className="btn-ghost flex-1 flex items-center justify-center gap-2">
-                    <Play size={14} />
-                    DEMO
-                  </button>
-                  <button className="btn-ghost flex-1 flex items-center justify-center gap-2">
-                    <Github size={14} />
-                    CODE
-                  </button>
-                  <button className="btn-primary flex items-center gap-2">
-                    <ExternalLink size={14} />
-                    VIEW
-                  </button>
+                  {/* Highlights */}
+                  <div className="mb-4">
+                    <div className="label-small mb-3">KEY HIGHLIGHTS</div>
+                    <div className="space-y-2">
+                      {project.highlights.slice(0, 3).map((highlight, index) => (
+                        <div key={index} className="flex items-start gap-2">
+                          <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-body text-sm">{highlight}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
 
                 {/* Hover Effect Overlay */}
                 {hoveredProject === project.id && (
-                  <div className="absolute inset-0 bg-accent/5 pointer-events-none transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-accent/5 pointer-events-none transition-opacity duration-300 rounded-lg"></div>
                 )}
               </div>
             );
