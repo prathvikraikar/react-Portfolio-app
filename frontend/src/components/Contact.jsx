@@ -129,11 +129,11 @@ const Contact = () => {
             <div>
               <div className="label mb-4">CONNECT WITH ME</div>
               <div className="flex gap-4">
-                <a href="#" className="btn-ghost flex items-center gap-2">
+                <a href={mockData.personal.linkedin} target="_blank" rel="noopener noreferrer" className="btn-ghost flex items-center gap-2">
                   <Linkedin size={16} />
                   LINKEDIN
                 </a>
-                <a href="#" className="btn-ghost flex items-center gap-2">
+                <a href={mockData.personal.github} target="_blank" rel="noopener noreferrer" className="btn-ghost flex items-center gap-2">
                   <Github size={16} />
                   GITHUB
                 </a>
